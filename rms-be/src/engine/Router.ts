@@ -1,4 +1,4 @@
-import { TestRoute } from "../routes/TestRoute";
+import { AuthRoute } from "../routes/AuthRoute";
 
 export class Router {
 
@@ -7,7 +7,10 @@ export class Router {
      */
     private static readonly routes: Map<string, (request: Request, env: Env, ctx: ExecutionContext) => Promise<Response>> = new Map([
 
-        ["/test/m1", (request, env, ctx) => new TestRoute(request, env, ctx).method1()],
+        ["/auth/login", (request, env, ctx) => new AuthRoute(request, env, ctx).login()],
+        ["/auth/register", (request, env, ctx) => new AuthRoute(request, env, ctx).register()],
+        ["/auth/logout", (request, env, ctx) => new AuthRoute(request, env, ctx).logout()],
+        ["/auth/is-logged-in", (request, env, ctx) => new AuthRoute(request, env, ctx).isLoggedIn()],
 
     ]);
 

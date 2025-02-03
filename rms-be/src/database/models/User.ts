@@ -3,9 +3,8 @@ export interface User {
 
     email: string;
     displayName: string;
+    permissions: string;
 
     passwordHash: string;
     passwordSalt: string;
-
-    groups: string;
 }

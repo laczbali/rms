@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "watch": "ng serve --open --watch --configuration development",
+    "start": "ng serve --open --watch --configuration development",
     "build": "ng build --delete-output-path --configuration production",
     "deploy": "npm run build && wrangler pages deploy dist/browser"
   },

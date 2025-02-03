@@ -10,21 +10,7 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
 
-  title = 'rms-fe';
-  backendMessage = '-';
-
   constructor() {
-    this.getBackendMessage();
-  }
-
-  getBackendMessage() {
-    console.log('Fetching message from ' + environment.backendUrl);
-
-    fetch(`${environment.backendUrl}/test/m1`)
-      .then(response => response.text())
-      .then(data => {
-        this.backendMessage = data;
-      });
   }
 
 }

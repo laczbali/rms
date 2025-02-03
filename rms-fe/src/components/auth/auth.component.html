@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="title">
+        rms
+    </div>
+    <div class="subtitle">
+        Recipe Management System
+    </div>
+
+    <div class="form">
+
+        <div class="error-msg">{{ errorMessage }}</div>
+
+        <div class="login" *ngIf="method === 'login'">
+            <input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+            <input type="password" name="password" placeholder="Password" required [(ngModel)]="password">
+            <button class="btn" (click)="login()">Login</button>
+            <div class="btn link-button" (click)="method='register'">Register</div>
+        </div>
+
+        <div class="register" *ngIf="method === 'register'">
+            <input type="email" name="emailCreate" placeholder="Email" required [(ngModel)]="emailCreate">
+            <input type="text" name="displaynameCreate" placeholder="Display name" required
+                [(ngModel)]="displaynameCreate">
+            <input type="password" name="passwordCreate" placeholder="Password" required [(ngModel)]="passwordCreate">
+            <input type="password" name="passwordConfirm" placeholder="Confirm password" required
+                [(ngModel)]="passwordConfirm">
+
+            <button class="btn" (click)="register()">Register</button>
+            <div class="btn link-button" (click)="method='login'">Login</div>
+        </div>
+
+    </div>
+</div>

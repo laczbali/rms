@@ -1,4 +1,5 @@
 import { Router } from "./engine/Router";
+import { ServiceProvider } from "./engine/ServiceProvider";
 
 const allowedOrginis = [
 	"http://localhost:4200",
@@ -8,6 +9,8 @@ const allowedOrginis = [
 export default {
 
 	async fetch(request, env, ctx): Promise<Response> {
+		ServiceProvider.init(env);
+
 		var response = await Router.execute(request, env, ctx);
 
 		var origin = request.headers.get("Origin");
